@@ -25,8 +25,6 @@ public class StringFiroj {
   
 		String Input = "aabbbccddaaabbccceeff";
 
-		String input = "aabbbccddaaabbccceeff";
-
         Map<Character, Integer> frequencyMap = new LinkedHashMap<>();
 
         char[] chars = input.toCharArray();
