@@ -23,37 +23,40 @@ public class StringFiroj {
 
 	public static void main(String[] args) {
   
-		String Input = "aabbbccddaaabbccceeff";
+			int count = 0;
 
-        Map<Character, Integer> frequencyMap = new LinkedHashMap<>();
+		char tch = str.charAt(0);
+		
+		for (int i = 0; i < str.length(); i++) {
+		
+			char ch = str.charAt(i);
+			
+			if (ch == tch) {
+			
+				count++;
+				
+			} else {
+			
+				System.out.print(tch + "" + count + "");
+				
+				tch = ch;
+				
+				count = 1;
 
-        char[] chars = input.toCharArray();
-        
-        int count = 1;
-        
-        for (int i = 0; i < chars.length; i++) {
-        
-            if (i + 1 < chars.length && chars[i] == chars[i + 1]) {
-            
-                count++;
-                
-            } else {
-            
-                frequencyMap.put(chars[i], count);
-                
-                count = 1;
-            }
-        }
+			}
 
-        StringBuilder output = new StringBuilder();
-        
-        for (Map.Entry<Character, Integer> entry : frequencyMap.entrySet()) {
-        
-            output.append(entry.getKey()).append(entry.getValue());
-            
-        }
+		}
+		
+		System.out.print(tch + "" + count + "");
 
-        System.out.println(output);
+	}
+
+	public static void main(String[] args) {
+	
+		String str = "aabbbccddaaabbccceeff";
+		
+		charFreqCount(str);
+		
 	}
 
 }
